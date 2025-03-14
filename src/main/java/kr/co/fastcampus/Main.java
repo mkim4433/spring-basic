@@ -9,11 +9,11 @@ public class Main {
     public static void main(String[] args) throws SQLException {
         logger.info("Hello JAVA world!!");
 
-        String url = "jdbc:h2:mem:test;MODE=MySQL;";
+        var url = "jdbc:h2:mem:test;MODE=MySQL;";
 //            String url = "jdbc:h2:~/test;MODE=MySQL;";
 
-        try(Connection connection = DriverManager.getConnection(url, "sa", "");
-        Statement statement = connection.createStatement();) {
+        try(var connection = DriverManager.getConnection(url, "sa", "");
+        var statement = connection.createStatement();) {
             Class.forName("org.h2.Driver");
 
             connection.setAutoCommit(false);
@@ -25,13 +25,9 @@ public class Main {
                 connection.rollback();
             }
 
-            ResultSet resultSet = statement.executeQuery("select id, username, password from member");
+            var resultSet = statement.executeQuery("select id, username, password from member");
             while (resultSet.next()) {
-                int id = resultSet.getInt("id");
-                String username = resultSet.getString("username");
-                String password = resultSet.getString("password");
-                Member member = new Member(id, username, password);
-
+                var member = new Member(resultSet);
                 logger.info(member.toString());
             }
         } catch (ClassNotFoundException e) {
