@@ -13,7 +13,7 @@ public class SimpleFilter implements Filter {
     public void doFilter(ServletRequest servletRequest,
                          ServletResponse servletResponse,
                          FilterChain chain) throws IOException, ServletException {
-        log.info("Filter -- Hello World ++");
+        log.info("Filter -- Hello World : Simple");
         var request = (HttpServletRequest) servletRequest;
         HttpSession session = request.getSession();
         Object userNameObj = session.getAttribute("userName");
