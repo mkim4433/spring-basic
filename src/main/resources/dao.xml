@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="daoFactory" class="kr.co.fastcampus.cli.DaoFactory"></bean>
+    <bean id="dao" class="kr.co.fastcampus.cli.Dao"
+          factory-bean="daoFactory"
+          factory-method="createDao"></bean>
+</beans>

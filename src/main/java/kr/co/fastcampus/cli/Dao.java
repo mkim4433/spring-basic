@@ -7,6 +7,10 @@ import java.sql.SQLException;
 
 @Slf4j
 public class Dao {
+    public static Dao createDao() {
+        return new Dao();
+    }
+
     public void run() {
         var url = "jdbc:h2:mem:test;MODE=MySQL;";
 //            String url = "jdbc:h2:~/test;MODE=MySQL;";
