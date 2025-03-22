@@ -9,11 +9,17 @@ import java.sql.*;
 public class Main {
     private static Logger logger = LoggerFactory.getLogger(Main.class);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         logger.info("Hello JAVA world!!");
 
+        try {
+            Class.forName("org.h2.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
         ApplicationContext context = new ClassPathXmlApplicationContext("dao.xml");
-        Dao dao = context.getBean("dao", Dao.class);
-        dao.run();
+        Dao2 dao2 = context.getBean("dao2", Dao2.class);
+        dao2.run();
     }
 }
