@@ -15,8 +15,10 @@ public class Main {
     public static void main(String[] args) throws SQLException {
         logger.info("로그 찍음 - Hello JAVA world!!");
         ApplicationContext context = new ClassPathXmlApplicationContext("dao.xml");
-        Dao2 dao2 = context.getBean("dao2", Dao2.class);
-        dao2.run();
-
+        ConnectionFactory factory = context.getBean(ConnectionFactory.class);
+        Connection connection = factory.getConnection();
+        log.info("connection : " + (connection != null));
+//        Dao2 dao2 = context.getBean("dao2", Dao2.class);
+//        dao2.run();
     }
 }
