@@ -10,7 +10,7 @@ public class Main {
     private static Logger logger = LoggerFactory.getLogger(Main.class);
 
     public static void main(String[] args) throws SQLException {
-        logger.info("Hello JAVA world!!");
+        logger.info("로그 찍음 - Hello JAVA world!!");
 
         try {
             Class.forName("org.h2.Driver");
