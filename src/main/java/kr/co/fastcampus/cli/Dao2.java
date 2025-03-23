@@ -13,6 +13,14 @@ public class Dao2 {
         this.connection = connection;
     }
 
+    void init() {
+        log.info("dao2 -- init");
+    }
+
+    void destroy() {
+        log.info("dao2 -- destroy");
+    }
+
     public void run() throws SQLException {
         var statement = connection.createStatement();
         connection.setAutoCommit(false);
