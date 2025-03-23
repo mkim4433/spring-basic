@@ -14,21 +14,9 @@ public class Main {
 
     public static void main(String[] args) throws SQLException {
         logger.info("로그 찍음 - Hello JAVA world!!");
+        ApplicationContext context = new ClassPathXmlApplicationContext("dao.xml");
+        Dao2 dao2 = context.getBean("dao2", Dao2.class);
+        dao2.run();
 
-        try {
-            Class.forName("org.h2.Driver");
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-
-//        ApplicationContext context = new ClassPathXmlApplicationContext("dao.xml");
-//        Dao2 dao2 = context.getBean("dao2", Dao2.class);
-//        dao2.run();
-
-        ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
-        A a1 = context.getBean("A", A.class);
-        A a2 = context.getBean("A", A.class);
-
-        log.info("result: " + (a1 == a2));
     }
 }
