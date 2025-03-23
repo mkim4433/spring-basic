@@ -25,4 +25,6 @@
     <bean id="dao2" class="kr.co.fastcampus.cli.Dao2">
         <constructor-arg ref="connection"></constructor-arg>
     </bean>
+
+    <bean class="kr.co.fastcampus.cli.A"></bean>
 </beans>
