@@ -7,7 +7,8 @@
 		http://www.springframework.org/schema/context
 		https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:annotation-config/>
+    <context:annotation-config />
+<!--    <context:component-scan base-package="kr.co.fastcampus.cli" />-->
 
     <bean id="connectionFactory" class="kr.co.fastcampus.cli.ConnectionFactory"
           init-method="init" destroy-method="destroy">
@@ -31,5 +32,4 @@
     </bean>
 
     <bean class="kr.co.fastcampus.cli.AppConfig"></bean>
-    <bean class="kr.co.fastcampus.cli.A"></bean>
 </beans>
