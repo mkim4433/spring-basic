@@ -15,6 +15,7 @@ public class Main {
     public static void main(String[] args) throws SQLException {
         logger.info("로그 찍음 - Hello JAVA world!!");
         ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("dao.xml");
+        context.close();
 
 //        Dao2 dao2 = context.getBean("dao2", Dao2.class);
 //        dao2.run();
