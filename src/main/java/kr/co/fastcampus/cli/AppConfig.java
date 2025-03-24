@@ -16,6 +16,7 @@ import org.springframework.stereotype.Component;
 public class AppConfig {
     public AppConfig() {
         log.info("App Config");
+        log.info("email changed");
     }
 
     @Bean
